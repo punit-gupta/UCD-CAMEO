@@ -161,7 +161,7 @@ else:
             with tab2:
                 st.header("Accuracy")
                 data1 = st.selectbox("Data2", ["IMG_DATA/*B?*.jp2", "IMG_DATA1/*B?*.jp2", "Data 3"])
-                accuracy(data,data1)
+                accuracy_s(data,data1)
             with tab3:
                 st.header("Classification")
                 tab1, tab2,tab3= st.tabs(["Basic", "Vegetation", "All"])
@@ -299,7 +299,7 @@ else:
             with tab2:
                 st.header("Accuracy")
                 data1 = st.selectbox("Data2", ["IMG_DATA2/*B?*.tif", "IMG_DATA3/*B?*.tif", "Data 3"])
-                accuracy(data,data1)
+                accuracy_l(data,data1)
 
             with tab3:
                 st.header("Classification")

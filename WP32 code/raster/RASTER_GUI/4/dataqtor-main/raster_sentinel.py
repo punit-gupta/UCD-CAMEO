@@ -241,44 +241,86 @@ def all_classification(ndvi1,m):
     st.write(f"Dence Vegetation Percentage: {c4:.2f}%")
     st.write(f"Water Percentage: {c5:.2f}%")
 
-def accuracy(s1,s2):
-    arr_st1 = np.stack(read_land(s1))
-    arr_st2 = np.stack(read_land(s2))
+def accuracy_s(s1,s2):
+    arr_st1 = np.stack(read_sen(s1))
+    arr_st2 = np.stack(read_sen(s2))
     st.header("Peak Signal-to-Noise Ratio (PSNR)")
     for i in range(0,len(arr_st1)-1):
         st.caption("Noise Data 1 -Data 2")
-        st.write("Noise Band "+str(i)+":"+str(cv2.PSNR(arr_st1[i],arr_st2[i]))+"%")
+        st.write("Noise Band "+str(i)+": "+str(cv2.PSNR(arr_st1[i],arr_st2[i]))+"%")
         st.caption("Noise Data 2 -Data 1")
-        st.write("Noise Band "+str(i)+":"+str(cv2.PSNR(arr_st2[i],arr_st1[i]))+"%")
+        st.write("Noise Band "+str(i)+": "+str(cv2.PSNR(arr_st2[i],arr_st1[i]))+"%")
 
     st.divider()
     st.header("Structural Similarity Index Measure (SSIM)") 
     for i in range(0,len(arr_st1)-1):    
         st.caption("SSIM Data 1 -Data 2")
-        st.write("SSIM Band "+str(i)+":"+str(ssim(arr_st1[i],arr_st2[i]))+"%")
+        st.write("SSIM Band "+str(i)+": "+str(ssim(arr_st1[i],arr_st2[i]))+"%")
         st.caption("SSIM Data 2 -Data 1")
-        st.write("SSIM Band "+str(i)+":"+str(ssim(arr_st2[i],arr_st1[i]))+"%")
+        st.write("SSIM Band "+str(i)+": "+str(ssim(arr_st2[i],arr_st1[i]))+"%")
     
     st.divider()
     st.header("Root mean square error (RMSE)") 
     for i in range(0,len(arr_st1)-1):    
         st.caption("RMSE Data 1 -Data 2")
-        st.write("RMSE Band "+str(i)+":"+str(math.sqrt(mse(arr_st1[i],arr_st2[i])))+"%")
+        st.write("RMSE Band "+str(i)+": "+str(math.sqrt(mse(arr_st1[i],arr_st2[i])))+"%")
         st.caption("RMSE Data 2 -Data 1")
-        st.write("RMSE Band "+str(i)+":"+str(math.sqrt(mse(arr_st2[i],arr_st1[i])))+"%")
+        st.write("RMSE Band "+str(i)+": "+str(math.sqrt(mse(arr_st2[i],arr_st1[i])))+"%")
 
     st.divider()
     st.header("Mean square error (MSE)") 
     for i in range(0,len(arr_st1)-1):    
         st.caption("MSE Data 1 -Data 2")
-        st.write("MSE Band "+str(i)+":"+str(mse(arr_st1[i],arr_st2[i]))+"%")
+        st.write("MSE Band "+str(i)+": "+str(mse(arr_st1[i],arr_st2[i]))+"%")
         st.caption("MSE Data 2 -Data 1")
-        st.write("MSE Band "+str(i)+":"+str(mse(arr_st2[i],arr_st1[i]))+"%")
+        st.write("MSE Band "+str(i)+": "+str(mse(arr_st2[i],arr_st1[i]))+"%")
 
     st.divider()
     st.header("Normalized  mean square error (NMSE)") 
     for i in range(0,len(arr_st1)-1):    
         st.caption("NMSE Data 1 -Data 2")
-        st.write("NMSE Band "+str(i)+":"+str(nmse(arr_st1[i],arr_st2[i]))+"%")
+        st.write("NMSE Band "+str(i)+": "+str(nmse(arr_st1[i],arr_st2[i]))+"%")
         st.caption("NMSE Data 2 -Data 1")
-        st.write("NMSE Band "+str(i)+":"+str(nmse(arr_st2[i],arr_st1[i]))+"%")
+        st.write("NMSE Band "+str(i)+": "+str(nmse(arr_st2[i],arr_st1[i]))+"%")
+
+def accuracy_l(s1,s2):
+    arr_st1 = np.stack(read_land(s1))
+    arr_st2 = np.stack(read_land(s2))
+    st.header("Peak Signal-to-Noise Ratio (PSNR)")
+    for i in range(0,len(arr_st1)-1):
+        st.caption("Noise Data 1 -Data 2")
+        st.write("Noise Band "+str(i)+": "+str(cv2.PSNR(arr_st1[i],arr_st2[i]))+"%")
+        st.caption("Noise Data 2 -Data 1")
+        st.write("Noise Band "+str(i)+": "+str(cv2.PSNR(arr_st2[i],arr_st1[i]))+"%")
+
+    st.divider()
+    st.header("Structural Similarity Index Measure (SSIM)") 
+    for i in range(0,len(arr_st1)-1):    
+        st.caption("SSIM Data 1 -Data 2")
+        st.write("SSIM Band "+str(i)+": "+str(ssim(arr_st1[i],arr_st2[i]))+"%")
+        st.caption("SSIM Data 2 -Data 1")
+        st.write("SSIM Band "+str(i)+": "+str(ssim(arr_st2[i],arr_st1[i]))+"%")
+    
+    st.divider()
+    st.header("Root mean square error (RMSE)") 
+    for i in range(0,len(arr_st1)-1):    
+        st.caption("RMSE Data 1 -Data 2")
+        st.write("RMSE Band "+str(i)+": "+str(math.sqrt(mse(arr_st1[i],arr_st2[i])))+"%")
+        st.caption("RMSE Data 2 -Data 1")
+        st.write("RMSE Band "+str(i)+": "+str(math.sqrt(mse(arr_st2[i],arr_st1[i])))+"%")
+
+    st.divider()
+    st.header("Mean square error (MSE)") 
+    for i in range(0,len(arr_st1)-1):    
+        st.caption("MSE Data 1 -Data 2")
+        st.write("MSE Band "+str(i)+": "+str(mse(arr_st1[i],arr_st2[i]))+"%")
+        st.caption("MSE Data 2 -Data 1")
+        st.write("MSE Band "+str(i)+": "+str(mse(arr_st2[i],arr_st1[i]))+"%")
+
+    st.divider()
+    st.header("Normalized  mean square error (NMSE)") 
+    for i in range(0,len(arr_st1)-1):    
+        st.caption("NMSE Data 1 -Data 2")
+        st.write("NMSE Band "+str(i)+": "+str(nmse(arr_st1[i],arr_st2[i]))+"%")
+        st.caption("NMSE Data 2 -Data 1")
+        st.write("NMSE Band "+str(i)+": "+str(nmse(arr_st2[i],arr_st1[i]))+"%")
