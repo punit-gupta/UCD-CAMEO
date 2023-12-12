@@ -1,0 +1,80 @@
+{
+    "cloud_cover": "99.9778614716346",
+    "constellation": "SENTINEL-2",
+    "created": "2023-05-20T11:43:51.024Z",
+    "data_id": "984f943d-40ec-4415-99b4-b31fff94b9e2",
+    "geometry": {
+        "coordinates": [
+            [
+                [
+                    -4.775269,
+                    54.071412
+                ],
+                [
+                    -5.941009,
+                    54.109222
+                ],
+                [
+                    -6.011505,
+                    53.12366
+                ],
+                [
+                    -5.324066,
+                    53.101643
+                ],
+                [
+                    -5.313415,
+                    53.120824
+                ],
+                [
+                    -5.233704,
+                    53.264257
+                ],
+                [
+                    -5.153717,
+                    53.407603
+                ],
+                [
+                    -5.073364,
+                    53.550838
+                ],
+                [
+                    -4.992218,
+                    53.693992
+                ],
+                [
+                    -4.910522,
+                    53.837246
+                ],
+                [
+                    -4.828003,
+                    53.980549
+                ],
+                [
+                    -4.775269,
+                    54.071412
+                ]
+            ]
+        ],
+        "type": "Polygon"
+    },
+    "instore": "True",
+    "instruments": "MSI",
+    "metadata_expiration_date": "2025-10-16 07:54:06.282927",
+    "metadata_id": "49c06869-53fa-4b18-aa9e-11530dc7b6e2",
+    "metadata_ingestion_date": "2023-10-17 07:54:06.282922",
+    "orbit_direction": "None",
+    "processing_level": "LEVEL1C",
+    "product_id": "0a3de981-f3d2-455f-bda3-afbf699cb084",
+    "product_type": "S2MSI1C",
+    "published": "2023-05-20T17:24:06.787Z",
+    "quicklook": "None",
+    "resolution": "0.0",
+    "sensor_mode": "INS-NOBS",
+    "size": "398694699",
+    "snow_cover": "0",
+    "status": "ONLINE",
+    "thumbnail": "https://catalogue.dataspace.copernicus.eu/get-object?path=/Sentinel-2/MSI/L1C/2023/05/20/S2A_MSIL1C_20230520T114351_N0509_R123_T29UQV_20230520T151921.SAFE/S2A_MSIL1C_20230520T114351_N0509_R123_T29UQV_20230520T151921-ql.jpg",
+    "timeliness": "None",
+    "title": "S2A_MSIL1C_20230520T114351_N0509_R123_T29UQV_20230520T151921"
+}
